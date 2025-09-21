@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MelodyConnect - Social Network for Music Lovers</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-music me-2"></i>MelodyConnect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="discover.html">Discover</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="groups.html">Groups</a>
+                    </li>
+                </ul>
+                <div class="d-flex" id="navbarActions">
+                    <a href="login.html" class="btn btn-outline-light me-2">Login</a>
+                    <a href="register.html" class="btn btn-light">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="music-note" style="top: 20%; left: 10%;"><i class="fas fa-music fa-2x"></i></div>
+        <div class="music-note" style="top: 60%; right: 15%;"><i class="fas fa-compact-disc fa-3x"></i></div>
+        <div class="music-note" style="top: 30%; right: 30%;"><i class="fas fa-headphones fa-2x"></i></div>
+        
+        <div class="container text-center position-relative">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold mb-4 text-light">Connect Through <span class="text-gradient">Music</span></h1>
+                    <p class="lead mb-5 text-light">Join thousands of music lovers sharing playlists, discovering new artists, and connecting over the universal language of music.</p>
+                    <div class="hero-buttons">
+                        <a href="register.html" class="btn btn-custom btn-lg mb-2 mb-md-0">
+                            <i class="fas fa-user-plus me-2"></i>Get Started
+                        </a>
+                        <a href="discover.html" class="btn btn-outline-light btn-lg ms-md-3">
+                            <i class="fas fa-compass me-2"></i>Explore Music
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <div class="container py-5">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="display-4 fw-bold text-light">Why MelodyConnect?</h2>
+                <p class="lead text-light">The ultimate platform for music enthusiasts</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card card-custom h-100 text-center p-4">
+                    <div class="card-body">
+                        <i class="fas fa-list-ul fa-3x text-warning mb-3"></i>
+                        <h5 class="text-light">Share Playlists</h5>
+                        <p class="text-light">Create and share your favorite playlists with friends and discover new music.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-custom h-100 text-center p-4">
+                    <div class="card-body">
+                        <i class="fas fa-users fa-3x text-info mb-3"></i>
+                        <h5 class="text-light">Join Communities</h5>
+                        <p class="text-light">Connect with like-minded music lovers in genre-specific groups and forums.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-custom h-100 text-center p-4">
+                    <div class="card-body">
+                        <i class="fas fa-calendar-alt fa-3x text-danger mb-3"></i>
+                        <h5 class="text-light">Music Events</h5>
+                        <p class="text-light">Discover and attend concerts, festivals, and music events near you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 MelodyConnect. All rights reserved.</p>
+            <p>Bringing music lovers together worldwide 🎵</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

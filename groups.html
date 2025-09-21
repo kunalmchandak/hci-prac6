@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groups - MelodyConnect</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-music me-2"></i>MelodyConnect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="discover.html">Discover</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="groups.html">Groups</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="login.html" class="btn btn-outline-light me-2">Login</a>
+                    <a href="register.html" class="btn btn-light">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Groups Section -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="mb-4 text-light">Music Groups & Communities</h2>
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="card card-custom">
+                                <div class="card-body">
+                                    <h5 class="text-light"><i class="fas fa-users me-2 text-success"></i>Jazz Enthusiasts</h5>
+                                    <p class="text-muted">2.1K members • Active community</p>
+                                    <p class="text-light">Discuss jazz history, share recordings, and connect with fellow jazz lovers.</p>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-success btn-sm">Join Group</button>
+                                        <button class="btn btn-outline-light btn-sm">View Posts</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card card-custom">
+                                <div class="card-body">
+                                    <h5 class="text-light"><i class="fas fa-headphones me-2 text-primary"></i>Electronic Music Producers</h5>
+                                    <p class="text-muted">890 members • Very active</p>
+                                    <p class="text-light">Share beats, collaborate on tracks, and learn production techniques.</p>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-primary btn-sm">Joined</button>
+                                        <button class="btn btn-outline-light btn-sm">View Posts</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom">
+                        <div class="card-body">
+                            <h4 class="mb-4 text-light">Create Group</h4>
+                            <form id="groupForm" onsubmit="handleGroupCreation(event)">
+                                <div class="mb-3">
+                                    <label for="groupName" class="form-label text-light">Group Name</label>
+                                    <input type="text" class="form-control" id="groupName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="groupCategory" class="form-label text-light">Category</label>
+                                    <select class="form-control" id="groupCategory" required>
+                                        <option value="">Select Category</option>
+                                        <option value="genre">Genre Discussion</option>
+                                        <option value="local">Local Music Scene</option>
+                                        <option value="instruments">Instrument Players</option>
+                                        <option value="production">Music Production</option>
+                                        <option value="theory">Music Theory</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="groupGenre" class="form-label text-light">Music Focus</label>
+                                    <select class="form-control" id="groupGenre">
+                                        <option value="">All Genres</option>
+                                        <option value="rock">Rock</option>
+                                        <option value="pop">Pop</option>
+                                        <option value="jazz">Jazz</option>
+                                        <option value="classical">Classical</option>
+                                        <option value="electronic">Electronic</option>
+                                        <option value="hip-hop">Hip-Hop</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="groupDescription" class="form-label text-light">Description</label>
+                                    <textarea class="form-control" id="groupDescription" rows="4" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-light">Group Type</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="groupType" id="publicGroup" value="public" checked>
+                                        <label class="form-check-label text-light" for="publicGroup">Public Group</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="groupType" id="privateGroup" value="private">
+                                        <label class="form-check-label text-light" for="privateGroup">Private Group</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="allowDiscussions" checked>
+                                    <label class="form-check-label text-light" for="allowDiscussions">Allow member discussions</label>
+                                </div>
+                                <button type="submit" class="btn btn-custom w-100">Create Group</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="d-flex align-items-center">
+            <i class="fas fa-check-circle me-2"></i>
+            <span id="notificationText">Action completed successfully!</span>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - MelodyConnect</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-music me-2"></i>MelodyConnect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="discover.html">Discover</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="groups.html">Groups</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="login.html" class="btn btn-outline-light me-2">Login</a>
+                    <a href="register.html" class="btn btn-light">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-custom mb-4">
+                        <div class="card-body text-center">
+                            <div class="user-avatar mx-auto mb-3">JD</div>
+                            <h4 class="text-light">Kunal Chandak</h4>
+                            <p class="text-muted">@kunal2604</p>
+                            <p class="text-light">Music enthusiast since 2021</p>
+                            <div class="d-flex justify-content-around mb-3">
+                                <div>
+                                    <strong class="text-light">156</strong>
+                                    <small class="d-block text-muted">Playlists</small>
+                                </div>
+                                <div>
+                                    <strong class="text-light">2.3K</strong>
+                                    <small class="d-block text-muted">Followers</small>
+                                </div>
+                                <div>
+                                    <strong class="text-light">890</strong>
+                                    <small class="d-block text-muted">Following</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card card-custom">
+                        <div class="card-body">
+                            <h3 class="mb-4 text-light">Edit Profile</h3>
+                            <form id="profileForm" onsubmit="handleProfileUpdate(event)">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="profileFirstName" class="form-label text-light">First Name</label>
+                                        <input type="text" class="form-control" id="profileFirstName" value="John">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="profileLastName" class="form-label text-light">Last Name</label>
+                                        <input type="text" class="form-control" id="profileLastName" value="Doe">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="profileBio" class="form-label text-light">Bio</label>
+                                    <textarea class="form-control" id="profileBio" rows="3" placeholder="Tell us about your musical journey..."></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="profileLocation" class="form-label text-light">Location</label>
+                                    <input type="text" class="form-control" id="profileLocation" placeholder="City, Country">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="profileWebsite" class="form-label text-light">Website/Social Media</label>
+                                    <input type="url" class="form-control" id="profileWebsite" placeholder="https://yourwebsite.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-light">Favorite Genres</label>
+                                    <div>
+                                        <div class="genre-tag">Rock</div>
+                                        <div class="genre-tag">Jazz</div>
+                                        <div class="genre-tag">Electronic</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-light">Privacy Settings</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="publicProfile" checked>
+                                        <label class="form-check-label text-light" for="publicProfile">Public Profile</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="showPlaylists" checked>
+                                        <label class="form-check-label text-light" for="showPlaylists">Show My Playlists</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-custom">Update Profile</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="d-flex align-items-center">
+            <i class="fas fa-check-circle me-2"></i>
+            <span id="notificationText">Action completed successfully!</span>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

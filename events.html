@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - MelodyConnect</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-music me-2"></i>MelodyConnect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="discover.html">Discover</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="groups.html">Groups</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="login.html" class="btn btn-outline-light me-2">Login</a>
+                    <a href="register.html" class="btn btn-light">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Events Section -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="mb-4 text-light">Music Events</h2>
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="card card-custom">
+                                <div class="card-body">
+                                    <h5 class="text-light"><i class="fas fa-microphone me-2 text-warning"></i>Summer Jazz Festival</h5>
+                                    <p class="text-muted"><i class="fas fa-calendar me-1"></i>June 15-17, 2025</p>
+                                    <p class="text-muted"><i class="fas fa-map-marker-alt me-1"></i>Central Park, New York</p>
+                                    <p class="text-light">Experience the best jazz musicians from around the world in this 3-day festival.</p>
+                                    <button class="btn btn-outline-warning btn-sm">Interested</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card card-custom">
+                                <div class="card-body">
+                                    <h5 class="text-light"><i class="fas fa-guitar me-2 text-info"></i>Rock the Night</h5>
+                                    <p class="text-muted"><i class="fas fa-calendar me-1"></i>July 22, 2025</p>
+                                    <p class="text-muted"><i class="fas fa-map-marker-alt me-1"></i>Madison Square Garden</p>
+                                    <p class="text-light">The biggest rock concert of the year featuring legendary bands.</p>
+                                    <button class="btn btn-outline-info btn-sm">Going</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom">
+                        <div class="card-body">
+                            <h4 class="mb-4 text-light">Create Event</h4>
+                            <form id="eventForm" onsubmit="handleEventCreation(event)">
+                                <div class="mb-3">
+                                    <label for="eventName" class="form-label text-light">Event Name</label>
+                                    <input type="text" class="form-control" id="eventName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="eventDate" class="form-label text-light">Date</label>
+                                    <input type="date" class="form-control" id="eventDate" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="eventTime" class="form-label text-light">Time</label>
+                                    <input type="time" class="form-control" id="eventTime" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="eventLocation" class="form-label text-light">Location</label>
+                                    <input type="text" class="form-control" id="eventLocation" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="eventGenre" class="form-label text-light">Music Genre</label>
+                                    <select class="form-control" id="eventGenre" required>
+                                        <option value="">Select Genre</option>
+                                        <option value="rock">Rock</option>
+                                        <option value="pop">Pop</option>
+                                        <option value="jazz">Jazz</option>
+                                        <option value="classical">Classical</option>
+                                        <option value="electronic">Electronic</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="eventDescription" class="form-label text-light">Description</label>
+                                    <textarea class="form-control" id="eventDescription" rows="3"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="eventPrice" class="form-label text-light">Ticket Price (Optional)</label>
+                                    <input type="number" class="form-control" id="eventPrice" min="0" step="0.01">
+                                </div>
+                                <button type="submit" class="btn btn-custom w-100">Create Event</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="d-flex align-items-center">
+            <i class="fas fa-check-circle me-2"></i>
+            <span id="notificationText">Action completed successfully!</span>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
